@@ -8,12 +8,12 @@ A local email classifier inspired by the Persian food "TahDig". TagDig uses smal
 
 ## Features
 
-TagDig currently supports email classification into the following categories:
+TagDig will support email classification into the following categories:
 
 1. **Job Application Emails** - Identifies recruitment and job-related correspondence
 2. **Meeting Emails** - Detects meeting invitations and scheduling communications
 
-More categories coming.
+More categories coming soon.
 
 ## Job Application Classification
 
@@ -21,7 +21,10 @@ Our current focus is on **Job application-related emails**. We are actively benc
 
 ### Benchmarking
 
-We benchmarked 35 models across 12 prompts. **Qwen3-4B-Q4_0.gguf** performed the best. Here are the full results:
+#### Experiment #1:
+
+We benchmarked 35 models across 12 prompts (`temperature: 0.1`, `top_p: 0.99`).
+**Qwen3-4B-Q4_0.gguf** performed the best. Here are the full results:
 
 <div align="center">
   <img src="job_chart.png" width="100%">
@@ -64,7 +67,7 @@ We benchmarked 35 models across 12 prompts. **Qwen3-4B-Q4_0.gguf** performed the
 | gemma-3-1b-it-Q8_0.gguf | 16.67% | 12 |
 | Gemmasutra-Mini-2B-v1-Q8_0.gguf | 9.09% | 11 |
 
-#### Prompts
+**Prompts**
 
 | prompt_id | accuracy_pct | distinct_models | n |
 | --- | --- | --- | --- |
@@ -310,6 +313,10 @@ Body: While we've decided to move forward with another candidate for the Marketi
 # true,REJECTED
   ```
 </details>
+
+#### Experiment #2:
+
+From the previous experiment, we selected models with >50% accuracy, and also included more variants of **Qwen3-4B**. 
 
 ## License
 
